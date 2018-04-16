@@ -2,11 +2,13 @@
 
 This application was initiated through [Create React App](https://github.com/facebook/create-react-app)
 
-This application simulates a consumer browsing and shopping cart experience.
+This application simulates a consumer browsing and shopping cart experience.  It is fully responsive, primarily using CSS `flexbox` and and various media queries.
 
-Static JSON is coming from a third party API and is used to hydrate the application's inventory.
+Static JSON is coming from a third-party API and is used to hydrate the application's inventory.  A fallback, static file is available in `assets/JSON/`.
 
 [Live demo](https://stoic-feynman-7684d4.netlify.com/)
+
+**NOTE: Application layout, assets and UX components were outlined by the prospective employer, I can only claim responsibility for the implementation**
 
 ## To dos...
 
