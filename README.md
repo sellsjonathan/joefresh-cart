@@ -10,7 +10,7 @@ Static JSON is coming from a third party API and is used to hydrate the applicat
 
 ## To dos...
 
-* Decouple logic and views from `<App.js>`. Create `<ProductList>` which would import `<Product>` as well as `<Pagination>` (To be created).
+* Decouple remaining logic and views from `<App.js>`. Create `<ProductList>` which would import `<Product>` as well as `<Pagination>` (To be created).
 
 * Investigate [StyledComponents](https://github.com/styled-components/styled-components) as a different solution for CSS
 
