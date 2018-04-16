@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px dotted #ccc;
+  padding: 20px 0px;
+  margin-bottom: 50px;
+}
+
+header img {
+  width: 90%;
+  height: auto;
+  align-self: center;
+  max-width: 500px;
+}

@@ -4,10 +4,10 @@ import './reset.css';
 import './App.css';
 
 // my components
-import Product from './components/Product.component';
-import Header from './components/Header.component';
-import CartTotalCalculator from './components/CartTotalCalculator.component';
-import CartDetail from './components/CartDetail.component';
+import Product from './components/Product/Product';
+import Header from './components/Header/Header';
+import CartTotalCalculator from './components/CartTotalCalculator/CartTotalCalculator';
+import CartDetail from './components/CartDetail/CartDetail';
 
 class App extends Component {
   constructor(props) {
@@ -31,8 +31,6 @@ class App extends Component {
     this.doApiCall();
   }
 
-  componentDidUpdate() {}
-
   doApiCall = async () => {
     try {
       const response = await fetch(
@@ -40,10 +38,7 @@ class App extends Component {
       );
       const json = await response.json();
       this.setState({
-        allProducts: json.results.map(item => ({
-          ...item,
-          id: Math.floor(Math.random() * 1000000000)
-        })),
+        allProducts: json.results,
         pagination: {
           currentPage: 1,
           productsPerPage: 6,
@@ -53,7 +48,7 @@ class App extends Component {
           totalProducts: json.results.length
         }
       });
-      this.renderPaginationItems();
+      this.calculatePagination();
       this.setState({ loadingData: false });
     } catch (err) {
       console.error(
@@ -66,14 +61,31 @@ class App extends Component {
   // cart functions
 
   addToCart(addId) {
-    console.log(addId);
-    const addItem = this.state.allProducts.filter(
-      product => product.id === addId
+    const addProduct = this.state.allProducts.filter(
+      product => product.productId === addId
     );
     this.setState({
-      shoppingCartProducts: this.state.shoppingCartProducts.concat(addItem)
+      shoppingCartProducts: this.state.shoppingCartProducts.concat(addProduct)
     });
   }
+
+  removeFromCart = removeId => {
+    const products = [...this.state.shoppingCartProducts];
+
+    const lastIndex = products.reduce(
+      (indexToDelete, currProduct, index) =>
+        currProduct.productId === removeId
+          ? (indexToDelete = index)
+          : indexToDelete,
+      0
+    );
+
+    this.setState({
+      shoppingCartProducts: products.filter(
+        (product, index) => index !== lastIndex
+      )
+    });
+  };
 
   // paginate functions
   minPaginateId() {
@@ -103,11 +115,11 @@ class App extends Component {
           }
         };
       },
-      () => this.renderPaginationItems()
+      () => this.calculatePagination()
     );
   }
 
-  renderPaginationItems(num) {
+  calculatePagination(num) {
     const renderItems = this.state.allProducts.filter(
       // Note: May not be performant with 1000s of records
       (product, index) =>
@@ -128,15 +140,15 @@ class App extends Component {
             ) : (
               <div>
                 <section>
-                  <h2 class="uppercase popHeading">Product list</h2>
+                  <h2 className="uppercase popHeading">Product list</h2>
                   <ul className="prodList">
                     {this.state.currentProductSet.map(product => (
                       <li
-                        key={product.id}
-                        onClick={() => this.addToCart(product.id)}
+                        key={product.productId}
+                        onClick={() => this.addToCart(product.productId)}
                       >
                         <Product
-                          key={product.id}
+                          key={product.productId}
                           prodImg={product.thumbnails.b2}
                           prodName={product.productName}
                           prodPrice={product.productPrice}
@@ -146,7 +158,7 @@ class App extends Component {
                       </li>
                     ))}
                   </ul>
-                  <div class="paginationContainer">
+                  <div className="paginationContainer">
                     <nav>
                       {Array(this.state.pagination.totalPages)
                         .fill(1)
@@ -164,7 +176,7 @@ class App extends Component {
                           </button>
                         ))}
                     </nav>
-                    <p class="totalProducts  f3 bold">
+                    <p className="totalProducts  f3 bold">
                       Your search returned{' '}
                       <span className="brandColor1-color">
                         {' '}
@@ -175,7 +187,10 @@ class App extends Component {
                   </div>
                 </section>
                 <section>
-                  <CartDetail cartProducts={this.state.shoppingCartProducts} />
+                  <CartDetail
+                    cartProducts={this.state.shoppingCartProducts}
+                    removeFromCart={this.removeFromCart}
+                  />
                 </section>
               </div>
             )}

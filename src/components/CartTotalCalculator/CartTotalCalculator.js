@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartTotalCalculator.css';
 
 class CartTotalCalculator extends React.Component {
   convertToCurrency(cost) {
@@ -10,7 +11,9 @@ class CartTotalCalculator extends React.Component {
       <div className="cartTotalCalculator">
         <h2>Cart-at-a-glance</h2>
         {this.props.orderTotalCount === 0 ? (
-          <p class="f3 greyColor">There are currently no items in your cart!</p>
+          <p className="f3 greyColor">
+            There are currently no items in your cart!
+          </p>
         ) : (
           <div>
             <p className="flex">

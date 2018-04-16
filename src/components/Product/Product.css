@@ -1,0 +1,55 @@
+.prodContainer {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 250ms ease-out;
+}
+
+.prodContainer:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
+.prodContainer .prodImg {
+  height: 200px;
+}
+
+.prodContainer h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.prodContainer .prodPrice {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.prodContainer .prodQuantity {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.cartTotalCalculator {
+  padding: 10px;
+  border: 1px solid #fa4616;
+  text-align: center;
+  width: 280px;
+}
+
+@media only screen and (min-width: 475px) {
+  .prodContainer {
+    width: 200px;
+    height: 325px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .prodContainer {
+    width: 300px;
+    height: 300px;
+  }
+}

@@ -1,0 +1,33 @@
+.cartTotalCalculator {
+  padding: 10px;
+  border: 1px solid #fa4616;
+  text-align: center;
+  width: auto;
+}
+
+.cartTotalCalculator h2 {
+  text-transform: uppercase;
+}
+
+.cartTotalCalculator .total {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid #dfdfdf;
+  padding-top: 20px;
+}
+
+.cartTotalCalculator p.flex {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 992px) {
+  .cartTotalCalculator {
+    width: 280px;
+  }
+}

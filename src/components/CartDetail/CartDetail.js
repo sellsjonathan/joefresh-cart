@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartDetail.css';
 
 class CartDetail extends React.Component {
   componentDidUpdate() {
@@ -12,13 +13,14 @@ class CartDetail extends React.Component {
         localQuantity: 1
       }))
       .reduce((all, product) => {
-        const doesHaveDuplicate = all.filter(item => item.id === product.id)
-          .length;
+        const doesHaveDuplicate = all.filter(
+          item => item.productId === product.productId
+        ).length;
 
         return Boolean(doesHaveDuplicate)
           ? all.map(
               item =>
-                item.id === product.id
+                item.productId === product.productId
                   ? { ...item, localQuantity: (item.localQuantity += 1) }
                   : item
             )
@@ -38,14 +40,25 @@ class CartDetail extends React.Component {
             <thead>
               <tr>
                 <th>Product name</th>
+                <th />
                 <th>Quantity</th>
                 <th>Price</th>
               </tr>
             </thead>
             <tbody>
               {this.combineLikeProducts().map(product => (
-                <tr key={product.id}>
-                  <td>{product.productName}</td>
+                <tr key={product.productId}>
+                  <td>{product.productName} </td>
+                  <td>
+                    {' '}
+                    <button
+                      onClick={() =>
+                        this.props.removeFromCart(product.productId)
+                      }
+                    >
+                      Remove
+                    </button>
+                  </td>
                   <td>{product.localQuantity}</td>
                   <td>${product.productPrice}</td>
                 </tr>
