@@ -1,6 +1,5 @@
 .prodContainer {
   width: 100%;
-  padding: 10px;
   font-size: 1rem;
   text-align: center;
   transition: all 250ms ease-out;
@@ -44,6 +43,7 @@
   .prodContainer {
     width: 200px;
     height: 325px;
+    padding: 10px;
   }
 }
 

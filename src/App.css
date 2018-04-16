@@ -125,6 +125,7 @@ ul.prodList li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
 
 .pagination nav {
