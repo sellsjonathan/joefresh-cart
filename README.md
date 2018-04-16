@@ -1,10 +1,10 @@
 ## Project description
 
-This application was initiated through [Create React App](https://github.com/facebook/create-react-app)
+This application was bootstrapped through [Create React App](https://github.com/facebook/create-react-app).
 
 This application simulates a consumer browsing and shopping cart experience.  It is fully responsive, primarily using CSS `flexbox` and and various media queries.
 
-Static JSON is coming from a third-party API and is used to hydrate the application's inventory.  A fallback, static file is available in `assets/JSON/`.
+Static JSON is coming from a third-party API and is used to hydrate the application's inventory.  A fallback static file is available in `assets/JSON/` for your reference.
 
 [Live demo](https://stoic-feynman-7684d4.netlify.com/)
 
@@ -12,7 +12,7 @@ Static JSON is coming from a third-party API and is used to hydrate the applicat
 
 ## To dos...
 
-* Decouple remaining logic and views from `<App.js>`. Create `<ProductList>` which would import `<Product>` as well as `<Pagination>` (To be created).
+* Decouple remaining logic and views from `<App.js>`. Create `<ProductList>` which would import `<Product>` as well as `<Pagination>` (To be created as well).
 
 * Investigate [StyledComponents](https://github.com/styled-components/styled-components) as a different solution for CSS
 
