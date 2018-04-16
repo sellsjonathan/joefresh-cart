@@ -10,11 +10,11 @@ Static JSON is coming from a third party API and is used to hydrate the applicat
 
 ## To dos...
 
-* Decouple from <App.js> (and create) a `<ProductList>` which would import `<Product>` as well as `<Pagination>` (<-- To be created also).
+* Decouple logic and views from `<App.js>`. Create `<ProductList>` which would import `<Product>` as well as `<Pagination>` (To be created).
 
 * Investigate [StyledComponents](https://github.com/styled-components/styled-components) as a different solution for CSS
 
-* Implement functional and component tests
+* Implement functional and component tests with [Jest](https://github.com/facebook/jest)
 
 ## Running the project
 
