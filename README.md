@@ -13,9 +13,9 @@ Static JSON is coming from a third-party API and is used to hydrate the applicat
 
 * Decouple remaining logic and views from `<App.js>`. Create `<ProductList>` which would import `<Product>` as well as `<Pagination>` (To be created as well).
 
-* Investigate [StyledComponents](https://github.com/styled-components/styled-components) as a different solution for CSS
+* Investigate [StyledComponents](https://github.com/styled-components/styled-components) as a different solution for CSS styling.
 
-* Implement functional and component tests with [Jest](https://github.com/facebook/jest)
+* Implement functional and component tests with [Jest](https://github.com/facebook/jest).
 
 ## Running the project
 
