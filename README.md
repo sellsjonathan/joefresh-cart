@@ -1,6 +1,6 @@
 ## Project description
 
-This application was made with [Create React App](https://github.com/facebook/create-react-app)
+This application was initiated through [Create React App](https://github.com/facebook/create-react-app)
 
 This application simulates a consumer browsing and shopping cart experience.
 
