@@ -8,9 +8,6 @@ Static JSON is coming from a third-party API and is used to hydrate the applicat
 
 [Live demo](https://stoic-feynman-7684d4.netlify.com/)
 
-**NOTE:<br>
-Application layout, assets and UX components were outlined by the prospective employer.  I can only claim responsibility for the implementation.  
-This is a functional prototype, and should not be taken as an example of my personal UX design acumen or strategy.**
 
 ## To dos...
 
@@ -25,3 +22,7 @@ This is a functional prototype, and should not be taken as an example of my pers
 Run `npm start` or `yarn start` in your terminal.
 This will run the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+##Notes & disclaimer
+Application layout, assets and UX components were outlined by the prospective employer.  I can only claim responsibility for the implementation.  
+This is a functional prototype, and should not be taken as an example of my personal UX design acumen or strategy.**
