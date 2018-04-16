@@ -2,7 +2,7 @@
 
 This application was bootstrapped through [Create React App](https://github.com/facebook/create-react-app).
 
-This application simulates a consumer browsing and shopping cart experience.  It is fully responsive, primarily using CSS `flexbox` and and various media queries.
+This application simulates a consumer browsing and shopping cart experience.  It is fully responsive, primarily using CSS `flexbox` between various media queries.
 
 Static JSON is coming from a third-party API and is used to hydrate the application's inventory.  A fallback static file is available in `assets/JSON/` for your reference.
 
