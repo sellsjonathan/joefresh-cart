@@ -8,7 +8,7 @@ Static JSON is coming from a third-party API and is used to hydrate the applicat
 
 [Live demo](https://stoic-feynman-7684d4.netlify.com/)
 
-**NOTE: 
+**NOTE:<br>
 Application layout, assets and UX components were outlined by the prospective employer.  I can only claim responsibility for the implementation.  
 This is a functional prototype, and should not be taken as an example of my personal UX design acumen or strategy.**
 
